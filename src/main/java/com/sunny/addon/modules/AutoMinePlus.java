@@ -53,7 +53,7 @@ public class AutoMinePlus extends Module {
     private Method sendPacketMethod;
 
     public AutoMinePlus() {
-        super(SunnyAddon.CATEGORY, "AutoMinePlus", "Mina automáticamente el entorno de los enemigos (Surround/Burrow).");
+        super(SunnyAddon.CATEGORY, "AutoMinePlus", "Anti Surround.");
     }
 
     @Override
