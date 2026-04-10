@@ -45,7 +45,7 @@ public class MaceKill extends Module {
     private static final Field ENT_Z = findField(Entity.class, "field_5989", "z");
 
     public MaceKill() {
-        super(SunnyAddon.CATEGORY, "UltraKill", "MaceKill (Versión Estable No-Vehicle)");
+        super(SunnyAddon.CATEGORY, "UltraKill", "MaceKill But Better");
     }
 
     private static Field findField(Class<?> clazz, String intermediary, String yarn) {
