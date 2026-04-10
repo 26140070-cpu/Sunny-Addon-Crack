@@ -37,7 +37,7 @@ public class ShulkerStealer extends Module {
     private boolean rekitRunning = false;
 
     public ShulkerStealer() {
-        super(SunnyAddon.CATEGORY, "Shulker Stealer", "Rellena tu inventario automáticamente desde una Shulker usando tu Kit guardado.");
+        super(SunnyAddon.CATEGORY, "Shulker Stealer", "Re fill your inventory from your saved kit.");
     }
 
     @Override
