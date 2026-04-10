@@ -40,7 +40,7 @@ public class ChinaHat extends Module {
         .build());
 
     public ChinaHat() {
-        super(SunnyAddon.CATEGORY, "zChinaHat", "ChinaHat estilo ThunderHack con soporte de reflexión.");
+        super(SunnyAddon.CATEGORY, "zChinaHat", "ChinaHat style ThunderHack.");
     }
 
     @EventHandler
