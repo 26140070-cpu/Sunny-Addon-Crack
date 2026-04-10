@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "sunny-addon",
+  "version": "2.0.0",
+  "name": "Sunny Addon",
+  "description": "Sunny Addon by Gatusit0DMC and desofuscated by Donalp012",
+  "authors": [
+    "GatusitODMC",
+    "Donalp012"
+  ],
+  "contact": {
+    "sources": "https://github.com/GatusitoDMC/Sunny-Addon"
+  },
+  "icon": "assets/sunnyaddon/Icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "com.sunny.addon.SunnyAddon"
+    ]
+  },
+  "mixins": [
+    "sunny-addon.mixins.json"
+  ],
+  "custom": {
+    "meteor-client:color": "225,25,25"
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": ["1.21.11", "1.21.11"],
+    "meteor-client": "*"
+  }
+}

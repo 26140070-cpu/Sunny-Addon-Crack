@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.sunny.addon.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "Jumping",
+    "PlayerMoveC2SPacketAccessor",
+    "PlayerMoveC2SPacketMixin",
+    "SplashOverlayMixin",
+    "ShulkerScreenMixin",
+    "AbstractClientPlayerEntityMixin",
+    "MinecraftClientAccesor"
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
