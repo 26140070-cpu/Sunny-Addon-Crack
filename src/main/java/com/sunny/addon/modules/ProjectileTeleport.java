@@ -36,7 +36,7 @@ public class ProjectileTeleport extends Module {
     private Entity target = null;
 
     public ProjectileTeleport() {
-        super(SunnyAddon.CATEGORY, "ArrowPoP", "Exploit de proyectiles sin usar getPos.");
+        super(SunnyAddon.CATEGORY, "ArrowPoP", "Teleport to entities to launch a projectile at them with high velocity. Works best on Paper servers.");
     }
 
     @EventHandler
