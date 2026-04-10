@@ -42,7 +42,7 @@ public class PlayerTP extends Module {
     );
 
     public PlayerTP() {
-        super(SunnyAddon.CATEGORY, "FlyTP", "Teletransportarse al jugador más cercano y atacar.");
+        super(SunnyAddon.CATEGORY, "FlyTP", "Teleport to nearest player and attack");
     }
 
     @EventHandler
