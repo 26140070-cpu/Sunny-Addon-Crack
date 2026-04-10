@@ -57,7 +57,7 @@ public class AnchorAura extends Module {
     private static Field SELECTED_SLOT_FIELD;
 
     public AnchorAura() {
-        super(SunnyAddon.CATEGORY, "AnchorAura", "Anchor Aura optimizado para combate automático.");
+        super(SunnyAddon.CATEGORY, "AnchorAura", "Anchor Aura But Better.");
     }
 
     @Override
@@ -82,7 +82,7 @@ public class AnchorAura extends Module {
                 } catch (NoSuchFieldException ignored) {}
             }
         } catch (Exception e) {
-            error("Fallo crítico al acceder al inventario por reflexión.");
+            error("Failed to access inventory.");
         }
     }
 
