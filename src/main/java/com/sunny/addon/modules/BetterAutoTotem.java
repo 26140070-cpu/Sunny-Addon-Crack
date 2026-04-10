@@ -68,7 +68,7 @@ public class BetterAutoTotem extends Module {
     private boolean crystalWasActive = false;
 
     public BetterAutoTotem() {
-        super(SunnyAddon.CATEGORY, "MegaTotem", "Auto Totem avanzado con gestión de lag e integración de Crystal+.");
+        super(SunnyAddon.CATEGORY, "MegaTotem", "Better totem.");
     }
 
     @Override
