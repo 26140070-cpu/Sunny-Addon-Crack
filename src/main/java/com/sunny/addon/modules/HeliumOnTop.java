@@ -21,7 +21,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 
 public class HeliumOnTop extends Module {
-    // --- Configuración del GUI ---
     private final SettingGroup sgGeneral = this.settings.getDefaultGroup();
     private final SettingGroup sgRender = this.settings.createGroup("Render");
 
@@ -40,7 +39,6 @@ public class HeliumOnTop extends Module {
     private final Setting<SettingColor> areaColor = sgRender.add(new ColorSetting.Builder()
         .name("fill-color").defaultValue(new SettingColor(255, 255, 255, 10)).build());
 
-    // --- Variables de estado ---
     private BlockPos pos1, pos2;
     private final List<BlockPos> blocksToMine = new ArrayList<>();
     private long lastClickTime = 0L;
@@ -62,8 +60,6 @@ public class HeliumOnTop extends Module {
         pos1 = null; pos2 = null;
         synchronized (blocksToMine) { blocksToMine.clear(); }
     }
-
-    // --- Lógica de Selección ---
     public void onTriggerClick(int button) {
         if (button == selectionButton.get().glfw && System.currentTimeMillis() - lastClickTime >= 300L) {
             if (mc.crosshairTarget instanceof BlockHitResult result) {
@@ -94,7 +90,7 @@ public class HeliumOnTop extends Module {
             int maxZ = Math.max(pos1.getZ(), pos2.getZ());
 
             for (int x = minX; x <= maxX; x++) {
-                for (int y = maxY; y >= minY; y--) { // Minar de arriba hacia abajo
+                for (int y = maxY; y >= minY; y--) { 
                     for (int z = minZ; z <= maxZ; z++) {
                         blocksToMine.add(new BlockPos(x, y, z));
                     }
@@ -103,7 +99,6 @@ public class HeliumOnTop extends Module {
         }
     }
 
-    // --- Bucle principal (Tick) ---
     @EventHandler
     private void onTick(Pre event) {
         if (blocksToMine.isEmpty() || mc.player == null) {
@@ -120,9 +115,7 @@ public class HeliumOnTop extends Module {
         double pZ = mc.player.getZ();
 
         synchronized (blocksToMine) {
-            // Eliminar bloques que ya son aire
             blocksToMine.removeIf(p -> mc.world.getBlockState(p).isAir());
-            // Ordenar por cercanía al jugador
             blocksToMine.sort(Comparator.comparingDouble(p -> p.getSquaredDistance(pX, pY, pZ)));
         }
 
@@ -131,28 +124,24 @@ public class HeliumOnTop extends Module {
         BlockPos target = blocksToMine.get(0);
         double distSq = target.getSquaredDistance(pX, pY, pZ);
 
-        // Rotar la cámara hacia el objetivo
         Rotations.rotate(Rotations.getYaw(target), Rotations.getPitch(target));
 
         if (distSq > Math.pow(stopDist.get(), 2)) {
-            // Si está lejos, caminar hacia él
             updateMovement(true);
 
-            // Saltar si hay un obstáculo
             if (mc.player.isOnGround() && (mc.player.horizontalCollision)) {
                 mc.player.jump();
             }
 
-            // Lógica de Auto-Bridge
             if (autoBridge.get()) {
                 BlockPos underFeet = mc.player.getBlockPos().down();
                 if (mc.world.getBlockState(underFeet).isAir() && mc.player.isOnGround()) {
-                    updateMovement(false); // Parar para poner bloque
+                    updateMovement(false); 
                     placeBlock(underFeet);
                 }
             }
         } else {
-            // Si está cerca, parar y minar
+
             stopMovement();
             mineBlock(target);
         }
