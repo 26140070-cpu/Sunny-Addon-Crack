@@ -77,7 +77,7 @@ public class KillEffects extends Module {
     private static final Field LIGHTNING_COSMETIC = findField(LightningEntity.class, "field_7182", "cosmetic");
 
     public KillEffects() {
-        super(SunnyAddon.CATEGORY, "Kill Effects", "Efectos al matar jugadores.");
+        super(SunnyAddon.CATEGORY, "Kill Effects", "Simple Kill Effects hihiha.");
     }
 
     private static Field findField(Class<?> clazz, String intermediary, String yarn) {
