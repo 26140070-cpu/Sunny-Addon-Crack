@@ -45,7 +45,7 @@ public class KomarPvP extends Module {
     public enum Weapon { MACE, SPEAR, SWORD }
 
     public KomarPvP() {
-        super(SunnyAddon.CATEGORY, "FlyTarget", "Módulo de combate con vuelo dinámico.");
+        super(SunnyAddon.CATEGORY, "FlyTarget", "Ez Fly to the nearest player and attack them with a Mace, Spear or Sword (Deje la Spear por si se logra usar con ViaFabric, me da pereza testear)");
     }
 
     private static Field findField(Class<?> clazz, String intermediary, String yarn) {
