@@ -12,7 +12,7 @@ public class CrystalPlus extends Module {
     private static final Field INV_SLOT_FIELD = findField(PlayerInventory.class, "field_7545", "selectedSlot");
 
     public CrystalPlus() {
-        super(SunnyAddon.CATEGORY, "Crystal+", "Reflexión pura sin errores de mapeado.");
+        super(SunnyAddon.CATEGORY, "Crystal+", "Crystal Aura But Better.");
     }
 
     private static Field findField(Class<?> clazz, String intermediary, String yarn) {
