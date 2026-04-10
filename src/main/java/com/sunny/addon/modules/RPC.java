@@ -48,7 +48,7 @@ public class RPC extends Module {
     private static final RichPresence presence = new RichPresence();
 
     public RPC() {
-        super(SunnyAddon.CATEGORY, "SunnyRPC", "Discord Rich Presence personalizada para Sunny Addon.");
+        super(SunnyAddon.CATEGORY, "SunnyRPC", "Discord Rich Presence.");
     }
 
     @Override
